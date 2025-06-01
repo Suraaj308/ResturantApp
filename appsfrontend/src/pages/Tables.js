@@ -12,7 +12,7 @@ const Table = () => {
 
     const fetchTables = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/tables');
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/tables`);
             const data = await response.json();
             if (data.success) {
                 const tablesWithFakeName = data.data.map((table, index) => ({
@@ -32,7 +32,7 @@ const Table = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/tables/${id}`, {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/tables/${id}`, {
                 method: 'DELETE',
             });
             const data = await response.json();
@@ -46,7 +46,7 @@ const Table = () => {
 
     const handleCreate = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/tables', {
+            const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/tables`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

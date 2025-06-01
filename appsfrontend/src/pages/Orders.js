@@ -74,8 +74,8 @@ function Order() {
   const fetchAvailableTable = async (customerCount) => {
     try {
       const [tablesResponse, ordersResponse] = await Promise.all([
-        fetch('http://localhost:5000/api/tables'),
-        fetch('http://localhost:5000/api/orders')
+        fetch(`${process.env.REACT_APP_BASE_URL}/api/tables`),
+        fetch(`${process.env.REACT_APP_BASE_URL}/api/orders`)
       ]);
 
       const tablesData = await tablesResponse.json();
@@ -150,7 +150,7 @@ function Order() {
 
       const placeOrder = async (orderDetails) => {
         try {
-          const response = await fetch('http://localhost:5000/api/orders', {
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/orders`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

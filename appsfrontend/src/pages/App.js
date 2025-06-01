@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/dishes');
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/dishes`);
         if (!response.ok) throw new Error('Failed to fetch dishes');
         const data = await response.json();
         setMenu(data);
