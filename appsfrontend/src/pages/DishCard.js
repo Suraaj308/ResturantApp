@@ -1,4 +1,4 @@
-import './DishCard.css'; // create a CSS file for styling if needed
+import './DishCard.css';
 
 
 function DishCard({ dish, count, onAdd, onRemove }) {

@@ -1,4 +1,3 @@
-// src/components/Table.js
 import React, { useState, useEffect } from 'react';
 import TableUnit from './TableUnit';
 import './Tables.css';
@@ -11,19 +10,16 @@ const Table = () => {
         chairCount: 2,
     });
 
-    // Fetch tables from GET API
     const fetchTables = async () => {
         try {
             const response = await fetch('http://localhost:5000/api/tables');
             const data = await response.json();
             if (data.success) {
-                // Add fakeName to each table
                 const tablesWithFakeName = data.data.map((table, index) => ({
                     ...table,
                     fakeName: index + 1,
                 }));
                 setTables(tablesWithFakeName);
-                // Set default tableName for new table
                 setNewTable((prev) => ({
                     ...prev,
                     tableName: (tablesWithFakeName.length + 1).toString(),
@@ -34,7 +30,6 @@ const Table = () => {
         }
     };
 
-    // Delete table using DELETE API
     const handleDelete = async (id) => {
         try {
             const response = await fetch(`http://localhost:5000/api/tables/${id}`, {
@@ -42,7 +37,6 @@ const Table = () => {
             });
             const data = await response.json();
             if (data.success) {
-                // Refresh table list
                 fetchTables();
             }
         } catch (error) {
@@ -50,7 +44,6 @@ const Table = () => {
         }
     };
 
-    // Create new table using POST API
     const handleCreate = async () => {
         try {
             const response = await fetch('http://localhost:5000/api/tables', {
@@ -70,12 +63,10 @@ const Table = () => {
         }
     };
 
-    // Fetch tables on component mount
     useEffect(() => {
         fetchTables();
     }, []);
 
-    // Handle modal open/close
     const openModal = () => {
         setShowModal(true);
     };
@@ -84,7 +75,6 @@ const Table = () => {
         setShowModal(false);
     };
 
-    // Handle input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewTable((prev) => ({
@@ -93,7 +83,6 @@ const Table = () => {
         }));
     };
 
-    // Render tables in rows of 7
     const renderTableRows = () => {
         const rows = [];
         for (let i = 0; i < tables.length; i += 7) {

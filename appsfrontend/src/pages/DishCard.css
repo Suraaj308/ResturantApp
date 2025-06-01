@@ -71,7 +71,6 @@
   margin-inline: 0.5rem;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 480px) {
   .dish-card {
     max-width: 100%;

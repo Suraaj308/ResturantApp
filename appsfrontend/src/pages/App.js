@@ -28,7 +28,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [orderCounts, setOrderCounts] = useState({});
 
-  // Fetch dishes from API
   useEffect(() => {
     const fetchDishes = async () => {
       try {
@@ -70,7 +69,6 @@ function App() {
   const totalItems = Object.values(orderCounts).reduce((a, b) => a + b, 0);
 
   const handleNext = () => {
-    // Pass orderCounts and menu to Order.js
     navigate('/placeorder', { state: { orderCounts, menu } });
   };
 

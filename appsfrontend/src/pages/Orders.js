@@ -12,11 +12,10 @@ function Order() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', address: '', people: '' });
   const [savedFormData, setSavedFormData] = useState(null);
-  const [showInstructionsForm, setShowInstructionsForm] = useState(false); // New state for instructions form
+  const [showInstructionsForm, setShowInstructionsForm] = useState(false);
   const [cookingInstructions, setCookingInstructions] = useState('');
 
   useEffect(() => {
-    // Update localStorage with cart changes
     localStorage.setItem('orderCounts', JSON.stringify(cart));
   }, [cart]);
 
@@ -59,18 +58,15 @@ function Order() {
   };
 
   const handleSaveForm = () => {
-    // Save form data and close form
     setSavedFormData({ ...formData });
     setShowForm(false);
   };
 
   const handleSaveInstructions = () => {
-    // Save cooking instructions and close form
     setShowInstructionsForm(false);
   };
 
   const handleCancelInstructions = () => {
-    // Clear instructions and close form
     setCookingInstructions('');
     setShowInstructionsForm(false);
   };
@@ -85,7 +81,7 @@ function Order() {
       const tablesData = await tablesResponse.json();
       const ordersData = await ordersResponse.json();
 
-      const currentTime = new Date(); // Use current time instead of hardcoded
+      const currentTime = new Date();
       const activeDineInOrders = ordersData.filter((order) => {
         if (order.orderType !== 'DineIn') return false;
         const orderedTime = new Date(order.orderedTime);
@@ -176,7 +172,6 @@ function Order() {
 
       await placeOrder(orderDetails);
 
-      // Reset state after successful order
       setCart({});
       localStorage.removeItem('orderCounts');
       setFormData({ name: '', phone: '', address: '', people: '' });

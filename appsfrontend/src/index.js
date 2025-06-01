@@ -1,11 +1,10 @@
-// index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Analytics from './pages/Analytics';
 import Tables from './pages/Tables';
 import OrderTickets from './pages/OrderTickets';
-import App from './pages/App'; // This was your App.js logic
+import App from './pages/App';
 import Login from './pages/Login';
 import AppLayout from './AppLayout';
 import './index.css';

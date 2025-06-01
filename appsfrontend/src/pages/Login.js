@@ -1,7 +1,6 @@
-// Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Create this CSS file for styling
+import './Login.css';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -23,8 +22,8 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 if (data.token) {
-                    localStorage.setItem('token', data.token); // Store token in localStorage
-                    navigate('/stats'); // Redirect to Menu (App.js)
+                    localStorage.setItem('token', data.token);
+                    navigate('/stats');
                 } else {
                     setError('No token received from server');
                 }

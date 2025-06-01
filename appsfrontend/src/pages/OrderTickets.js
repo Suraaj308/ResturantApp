@@ -1,4 +1,3 @@
-// OrdersTicket.js
 import React, { useState, useEffect } from 'react';
 import Ticket from './Ticket';
 import './OrderTickets';
@@ -7,7 +6,7 @@ const OrderTickets = () => {
     const [orders, setOrders] = useState([]);
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const ticketsPerPage = 8; // 4x2 matrix
+    const ticketsPerPage = 8;
 
     useEffect(() => {
         const fetchOrders = async () => {
@@ -17,7 +16,6 @@ const OrderTickets = () => {
                     throw new Error('Failed to fetch orders');
                 }
                 const data = await response.json();
-                // Sort orders by orderedTime (latest first)
                 const sortedOrders = data.sort(
                     (a, b) => new Date(b.orderedTime) - new Date(a.orderedTime)
                 );
@@ -29,7 +27,6 @@ const OrderTickets = () => {
         fetchOrders();
     }, []);
 
-    // Pagination logic
     const totalPages = Math.ceil(orders.length / ticketsPerPage);
     const startIndex = (currentPage - 1) * ticketsPerPage;
     const currentOrders = orders.slice(startIndex, startIndex + ticketsPerPage);

@@ -1,4 +1,3 @@
-/* Analytics.css */
 .analytics-container {
   padding: 20px;
   max-width: 1200px;
@@ -15,7 +14,6 @@
   text-align: center;
 }
 
-/* Top Section */
 .top-section {
   display: flex;
   justify-content: space-between;
@@ -43,7 +41,6 @@
   margin: 0;
 }
 
-/* Middle Section */
 .middle-section {
   display: flex;
   justify-content: space-between;
@@ -72,7 +69,6 @@
   font-size: 1.2rem;
 }
 
-/* Bottom Section */
 .bottom-section {
   margin-top: 30px;
 }
@@ -101,7 +97,7 @@
 .chefs-table tr:last-child td {
   border-bottom: none;
 }
-/* Analytics.css */
+
 .analytics-container {
   padding: 20px;
   max-width: 1200px;
@@ -118,7 +114,6 @@
   text-align: center;
 }
 
-/* Top Section */
 .top-section {
   display: flex;
   justify-content: space-between;
@@ -146,7 +141,6 @@
   margin: 0;
 }
 
-/* Middle Section */
 .middle-section {
   display: flex;
   justify-content: space-between;
@@ -175,7 +169,6 @@
   font-size: 1.2rem;
 }
 
-/* Progress Bars */
 .progress-bars {
   margin-top: 10px;
 }
@@ -205,7 +198,6 @@
   transition: width 0.3s ease-in-out;
 }
 
-/* Bottom Section */
 .bottom-section {
   margin-top: 30px;
 }
@@ -235,7 +227,6 @@
   border-bottom: none;
 }
 
-/* Analytics.css (add these styles at the end of the existing file) */
 
 .table-grid {
   padding: 10px;

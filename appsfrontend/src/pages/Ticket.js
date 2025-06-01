@@ -1,21 +1,17 @@
-// Ticket.js
 import React from 'react';
 import './Ticket.css';
 
 const Ticket = ({ order }) => {
-    // Calculate estimated completion time
     const orderedTime = new Date(order.orderedTime);
     const estimatedTime = new Date(orderedTime.getTime() + order.orderPrepTime * 60 * 1000); 
-    const currentTime = new Date(); // Current application time
+    const currentTime = new Date();
     const isOrderDone = currentTime >= estimatedTime;
     const statusText = isOrderDone ? 'Done' : 'Processing';
 
-    // Calculate total number of items
     const totalItems = order.dishOrdered.reduce((sum, dish) => sum + dish.dishQuantity, 0);
 
     return (
         <div className="ticket-card">
-            {/* Top Section (35%) */}
             <div className="ticket-top">
                 <h3>Order #{order.orderNumber}</h3>
                 <p>Table: {order.tableName}</p>
@@ -25,7 +21,6 @@ const Ticket = ({ order }) => {
                 <p>Status: {statusText}</p>
             </div>
 
-            {/* Middle Section (50%) */}
             <div className="ticket-middle">
                 <h4>Dishes</h4>
                 <div className="dish-list">
@@ -43,7 +38,6 @@ const Ticket = ({ order }) => {
                 </div>
             </div>
 
-            {/* Bottom Section (15%) */}
             <div className="ticket-bottom">
                 <button className={`status-button ${isOrderDone ? 'done' : 'processing'}`}>
                     {statusText}
