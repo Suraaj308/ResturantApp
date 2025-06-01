@@ -18,7 +18,7 @@ app.use(express.json());
 connectDB();
 
 app.use(cors({
-  origin: 'https://resturant-app-tawny.vercel.app/',
+  origin: 'https://resturant-app-tawny.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'PUT'],
   allowedHeaders: ['Content-Type'],
 }));
