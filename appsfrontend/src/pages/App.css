@@ -1,0 +1,88 @@
+.app-container {
+  padding: 2rem;
+}
+
+#goodeveningheading {
+  font-size: 1.2rem;
+  margin: 0; /* or any size like 24px, 1.5em, etc. */
+  font-weight: bold;
+}
+
+p {
+  margin: 0.5rem 0rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: #f0f5f3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  margin-right: 0.1rem;
+  font-size: 1.5rem;
+  color: #717171;
+}
+
+.search-bar {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #f0f5f3;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.category-button {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #ffffff;
+  border: 2px solid rgb(50, 50, 50);
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.category-button .category-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.category-button.active {
+  border-color: #007bff;
+  background-color: rgb(255, 255, 255);
+}
+
+.category-heading {
+  text-align: left;
+  font-size: 2rem;
+  margin: 0.5rem 0 0;
+}
+
+.next-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+
+.next-button:hover {
+  background-color: #333;
+}
